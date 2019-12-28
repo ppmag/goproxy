@@ -11,7 +11,7 @@ import (
         "strings"
         "testing"
 
-        "github.com/elazarl/goproxy"
+        "github.com/ppmag/goproxy"
 )
 
 func oneShotProxyNoKeepalive(proxy *goproxy.ProxyHttpServer, t *testing.T) (client *http.Client, s *httptest.Server) {
