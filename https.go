@@ -312,7 +312,7 @@ func copyOrWarn(ctx *ProxyCtx, dst io.Writer, src io.Reader, wg *sync.WaitGroup)
 }
 
 func copyAndClose(ctx *ProxyCtx, dst, src *net.TCPConn, wg *sync.WaitGroup) {
-	if _, err := io.Copy(dst, src); err != nil {
+	if _, err := io.Copy(dst, src); err != nil && bytes <= 0 {
 		ctx.Warnf("Error copying to client: %s", err)
 	}
 
